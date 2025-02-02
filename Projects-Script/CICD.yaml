@@ -60,7 +60,7 @@
         chdir: /home/ubuntu/secretsanta-generator
         
     - name: Build & Tag Docker Image
-      command: docker build -t adijaiswal/santa:latest .
+      command: docker build -t kienfru/santa:latest .
       args:
         chdir: /home/ubuntu/secretsanta-generator
         
@@ -72,7 +72,7 @@
       command: docker login -u {{ docker_username }} -p {{ docker_password }}
       
     - name: Push Docker Image
-      command: docker push adijaiswal/santa:latest
+      command: docker push kienfru/santa:latest
       
     - name: Deploy To Container
       command: docker run -d --name secret-santa -p 8080:8080 adijaiswal/santa:latest
